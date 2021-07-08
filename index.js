@@ -18,21 +18,30 @@
 
 //! Shazam Charts Api (functional)
 
-// fetch("https://shazam-core.p.rapidapi.com/v1/charts/world?limit=10", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "768ec53e87msh5c7325f02e043cbp19ea52jsnba76d5ab383a",
-// 		"x-rapidapi-host": "shazam-core.p.rapidapi.com"
-// 	}
-// })
-// .then(res => {
-// 	return res.json();
-// }).then(data => {
-//     const HTMLInsert = data.map(info=>{
-//
-//     })
-//     document.body.innerHTML = HTMLInsert.join('')
-// })
-// .catch(err => {
-// 	console.error(err);
-// })
+fetch("https://shazam-core.p.rapidapi.com/v1/charts/world?limit=10", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "768ec53e87msh5c7325f02e043cbp19ea52jsnba76d5ab383a",
+		"x-rapidapi-host": "shazam-core.p.rapidapi.com"
+	}
+})
+.then(res => {
+	return res.json();
+}).then(data => {
+    console.log(data)
+    // const HTMLInsert = data.map(info=>{
+    //     info.images
+    // })
+    // document.body.innerHTML = HTMLInsert.join('')
+})
+.catch(err => {
+	console.error(err);
+})
+
+//! Bands In Town API 
+
+fetch(`https://rest.bandsintown.com/artists/Harry%20Styles/events?app_id=0c3d7989425512a2b6dea2004f6cdd51&date=upcoming`).then(res => {
+    return res.json()
+}).then(data =>{
+    console.log(data)
+})
