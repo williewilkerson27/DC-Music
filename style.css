@@ -25,3 +25,9 @@ p {
 }
 
 /* 0 0 20px #fff, 0 0 30px #3e51fd, 0 0 40px #3e51fd, 0 0 50px #3e51fd, 0 0 60px #3e51fd, 0 0 70px #3e51fd, 0 0 80px #3e51fd; */
+
+div .artist-card {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
