@@ -44,8 +44,7 @@ div .artist-card {
 
 .navbar-brand {
     font-family: fantasy;
-    display:flex;
-    align-self: center;
+    
     
 }
 
@@ -55,4 +54,10 @@ div .artist-card {
 
 .dropdown-item {
     background-color: cadetblue;
+}
+
+.dc-logo {
+    height: 40px;
+    width: 50px;    
+    
 }
