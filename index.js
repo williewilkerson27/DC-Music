@@ -39,9 +39,15 @@ fetch("https://shazam-core.p.rapidapi.com/v1/charts/world?limit=10", {
 })
 
 //! Bands In Town API 
-
-fetch(`https://rest.bandsintown.com/artists/Harry%20Styles/events?app_id=0c3d7989425512a2b6dea2004f6cdd51&date=upcoming`).then(res => {
-    return res.json()
-}).then(data =>{
-    console.log(data)
+const submitButton = document.getElementById('main-search')
+document.getElementById('search-form').addEventListener('submit', (event) =>{
+    event.preventDefault()
+    const HTMLSearch = encodeURIComponent(document.getElementById('input-search').value)
+    fetch(`https://rest.bandsintown.com/artists/${HTMLSearch}/events?app_id=0c3d7989425512a2b6dea2004f6cdd51&date=upcoming`).then(res => {
+        return res.json()
+    }).then(data =>{
+        console.log(data)
+    }).catch(err => {
+        console.error(err);
+    })
 })
