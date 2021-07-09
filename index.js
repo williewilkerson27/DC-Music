@@ -30,13 +30,20 @@ fetch("https://shazam-core.p.rapidapi.com/v1/charts/world?limit=10", {
     }).then(data => {
         let carouselInner = document.getElementById('carousel-inner')
         let active = "active"
+        let index = 1
+        console.log(data)
         const HTMLInsert = data.map(info => {
-                const HTMLReturn = (`<div class="carousel-item ${active}">
+            const HTMLReturn = (`<div class="carousel-item ${active}">
                 <img src="${info.images.coverart}"
                 class="d-block w-100 h-50" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                <h5>#${index}: ${info.title}</h5>
+                <p>${info.subtitle}</p>
+                </div>
                 </div>`)
-                active = ""
-                return HTMLReturn
+            active = ""
+            index += 1
+            return HTMLReturn
         })
         carouselInner.innerHTML = HTMLInsert.join('')
     })
