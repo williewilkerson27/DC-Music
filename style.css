@@ -31,3 +31,8 @@ div .artist-card {
     padding: 30px;
     justify-content: space-between;
 }
+
+.carousel-item {
+    height: 100%;
+    width: 100%;
+}
